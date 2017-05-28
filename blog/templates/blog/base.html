@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Robin White">
+      <meta name="keywords" content="">
+
+      <title>robintwhite</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Oswald|Roboto' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript" async
+          src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+
+    </head>
+
+    <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="{% static 'Images/XCTLogoSm.png' %}"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'post_list' %}">Blog</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></li>
+              <li><a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a></li>
+              <li><a href="{% url 'logout' %}" class="top-menu"><small>Log out</small></a></li>
+            {% else %}
+              <li><a href="{% url 'login' %}" class="top-menu">Login</a></li>
+            {% endif %}
+            <li><a href="http://robintwhite.pythonanywhere.com/admin">Admin</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    </body>
+
+    <!-- This is where the footer begins -->
+    <footer>
+    <div class= "navbar navbar-inverse navbar-static-bottom" role="navigation">
+        <div class="navbar-text pull-left">
+        </div>
+        <div class= "navbar-text pull-right">
+    <!-- Add in your social media / github links here -->
+            <a href="">
+                <i class=""></i></a>
+        </div>
+        <!--Below is the copyright information for the site. You can fill in your own here.-->
+        <div class="navbar-text pull-left">
+        &copy; Robin White, 2016
+        </div>
+    </div>
+    </footer>
+<!-- /.container -->
+
+
+</html>

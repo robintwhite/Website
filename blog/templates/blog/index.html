@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+<!-- Page Content -->
+{% block content %}
+
+    <br>
+    <!-- Banner -->
+    <style>
+    .banner{
+        width:100%;
+        height:50%;
+        height:calc(50% - 1px);
+        background-image:url("static/Images/banner1.jpeg");
+        background-position: top center;
+        background-size:cover;
+
+    }
+
+    .banner img {
+      width:100%;
+    }
+    .banner h1{
+      color: #ffffff;
+      margin-left: 40px;
+    }
+    .banner p {
+    color: #5E5E5E;
+    margin-left: 40px;
+    }
+    .home_content p {
+    color: #5E5E5E;
+    padding-top: 50%;
+    margin-left: 40px;
+    }
+    .logo {
+      font-family: 'Oswald', sans-serif;
+      color: #ffffff;
+      font-weight:400;
+      font-size:32pt;
+      padding-left:25px;
+      padding-top: 25px;
+      text-align:left;
+    }
+    .line {
+      padding-top:20px;
+      white-space:no-wrap;
+      overflow:hidden;
+      text-align:center;
+    }
+    .text {
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff;
+      font-weight:400;
+      font-size:16pt;
+      padding:15px;
+      text-align:left;
+    }
+    .text2 {
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff;
+      font-weight:300;
+      font-size:12pt;
+      padding-left:35px;
+      text-align:left;
+    }
+    </style>
+
+    <div class="banner">
+        <div class="col-xs-7 logo">Robin White</div>
+        <div class="col-xs-5 line"></div>
+        <div class="col-xs-6 text2">Student. Researcher. Hobbyist.</div>
+        <div class="col-xs-6 text"></div>
+        <div class="col-xs-6 text">Welcome to my corner of the internet</div>
+        <div class="col-xs-6 text"></div>
+
+    </div>
+
+    <div class="container-fluid">
+      <div class="col-md-12">
+        <div class="text-left">
+          <h1>Featured</h1>
+
+            <div class="row-fluid">
+
+              <div class ="post">
+                <div class="col-md-9">
+
+                      <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+                      <p>published: {{ post.published_date }}</p>
+                      <div class ="bslist">
+                        <p>{{ post.text|linebreaksbr }}</p>
+                      </div>
+                      <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+                    {% if post.image %}
+                      <img src='{{ post.image.url }}' class='img-responsive' height="50%" width="50%"/>
+                    {% endif %}
+                  </div>
+              </div>
+              <div class="col-md-3">
+                <div class="text-right">
+                  <p> Sidebar text </p>
+                </div>
+              </div>
+              <div class="col-xs-12 line"><hr></div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /.container -->
+
+{% endblock %}

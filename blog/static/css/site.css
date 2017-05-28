@@ -1,0 +1,121 @@
+/* navbar */
+.navbar-inverse,
+.nav .navbar-nav .navbar-right {
+    background-color: #000000;
+    border-color: #E7E7E7;
+    padding-top: 10px;
+}
+/* title */
+.navbar-inverse {
+    color: #ffffff;
+}
+.navbar-brand{
+    padding-top: 00px;
+    color: #ffffff;
+    height:auto;
+    width:auto;
+
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #5E5E5E;
+}
+
+.top-menu{
+  color: #ffffff;
+}
+
+header {
+  padding: 20px 0;
+}
+
+header .row,
+footer .row {
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header p {
+  padding: 0 20px;
+  margin: 0;
+}
+
+/*******body***********/
+
+body,html {
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #000000;
+  height: 100%
+}
+
+/* Index Page Banner*/
+.content {
+    padding-left: 50px;
+    color: #000000;
+    height: 100%
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.post {
+    padding-left, padding-right: 50px;
+    margin-bottom: 70px;
+    margin-top: 20px;
+}
+
+.post h1, h2, h3, h4 a,{
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+.post h1, h2, h3, h4 a:visited {
+  color: ##828282;
+}
+
+.bslist p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-length: 75ch;
+  max-height: 18ch;
+}
+
+.comment{
+  margin: 20px 0 20px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}

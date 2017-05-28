@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-3">
+        <!--Sidebar content-->
+      </div>
+      <div class ="post">
+        <div class="col-md-6">
+          {% for post in posts %}
+              <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+              <p>published: {{ post.published_date }}</p>
+              <div class ="bslist">
+                <p>{{ post.text|safe|linebreaksbr }}</p>
+              </div>
+              <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+            {% if post.image %}
+              <img src='{{ post.image.url }}' class='img-responsive' height="50%" width="50%"/>
+            {% endif %}
+        <div class="col-xs-12 line"><hr></div>
+        {% endfor %}
+        </div>
+      </div>
+      <div class="col-md-3">
+      <p> Sidebar text </p>
+      </div>
+  </div>
+</div>
+{% endblock %}
