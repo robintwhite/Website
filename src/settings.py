@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'g$^*2#ulj_0v&moxgku#6l_e+d-@_h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = [] #'robintwhite.pythonanywhere.com'
+ALLOWED_HOSTS = ['robintwhite.pythonanywhere.com'] #'robintwhite.pythonanywhere.com'
 
 LOGIN_REDIRECT_URL = '/'
 
