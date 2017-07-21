@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-3">
+        <div class="text-right">
+        <!--Sidebar content-->
+        </div>
+      </div>
+      <div class ="post">
+        <div class="col-md-6">
+            <h3> {{ category.title }} </h3>
+            {% if posts %}
+              <ul>
+                {% for post in posts %}
+                  <li><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+                  {% endfor %}
+                </ul>
+            {% else %}
+              <strong>No pages currently in category.</strong>
+            {% endif %}
+            <div class="col-xs-12 line"><hr></div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="sidebar">
+            <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
+            {% for category in categories %}
+              <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+            {% endfor %}
+      </div></div>
+  </div>
+</div>
+{% endblock %}

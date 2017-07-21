@@ -26,7 +26,7 @@
 }
 
 header {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 header .row,
@@ -49,11 +49,11 @@ header p {
   padding: 0 20px;
   margin: 0;
 }
-
+.tab { margin-left: 20px; }
 /*******body***********/
 
 body,html {
-  padding-top: 50px;
+  padding-top: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #000000;
@@ -87,24 +87,37 @@ h1, h2, h3, h4 {
 .post {
     padding-left, padding-right: 50px;
     margin-bottom: 70px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
-.post h1, h2, h3, h4 a,{
+.post h1, h2, h3, h4, a,{
     font-family: 'Roboto', sans-serif;
     color: #000000;
 }
 
 .post h1, h2, h3, h4 a:visited {
-  color: ##828282;
+  color: #828282;
 }
 
-.bslist p {
+.mybloglist p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-length: 75ch;
   max-height: 18ch;
+}
+.mybreak {
+margin-top: 10px;
+
+}
+.sidebar{
+  text-align: right;
+  margin-top: 50px; }
+
+.contact_info{
+  margin-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
 }
 
 .comment{
@@ -117,5 +130,5 @@ ul {
 /* Footer Styles */
 
 footer {
-    margin: 50px 0;
+    margin: 20px 0;
 }

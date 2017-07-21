@@ -5,16 +5,38 @@
 
 <!-- Contact Details Column -->
 <div class="container-fluid">
- <div class="col-md-4">
-     <h3>Contact Details</h3>
-     <p>
+  <div class="row">
+    <!-- Contact Details Column -->
+    <div class="col-sm-3" style="">
+      <p></p>
+    </div>
+ <div class="col-sm-6" style="">
+   <div class="post">
+     <h2>
          Current projects
-     </p>
+     </h2>
      <ul class="list-group">
          <li>
          For details concerning current research project please see current publications and profile on Research Gate
          </li>
      </ul>
+     <h2>
+         Previous projects
+     </h2>
+     <ul class="list-group">
+         <li>- X-ray photoelectron spectroscopy of MoO<sub>3</sub> on organic semiconductors using ultra-high vacuum physical vapour deposition. <a href="https://www.researchgate.net/publication/295099548_Interface_Structure_of_MoO3_on_Organic_Semiconductors" target="_blank"> <i>Scientific Reports</i></a></li>
+         <li>- Analyzing locomotion of <i>pseudomonas aeruginosa</i> using motion tracking. <a href="https://github.com/robintwhite/Bacteria-tracking" target="_blank"><i>Github</i></a></li>
+     </ul>
+ </div>
+ </div>
+ <div class="col-sm-3">
+     <div class="sidebar">
+       <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
+       {% for category in categories %}
+           <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+       {% endfor %}
+     </div></div>
  </div>
 </div>
+
 {% endblock %}

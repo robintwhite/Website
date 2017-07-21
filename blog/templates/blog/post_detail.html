@@ -3,29 +3,11 @@
 
 {% block content %}
 <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="col-md-3">
-              <!--Sidebar content-->
-            </div>
-
-            <div class="post">
-            <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3" style="">
+              <div class="post">
               <h1>{{ post.title }}</h1>
-            </div>
 
-            <div class="col-md-2">
-              {% if user.is_authenticated %}
-              <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-              <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-              {% else %}
-              <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-              {% endif %}
-            </div>
-            <div class="col-md-3">
-              <!-- filler -->
-            </div>
-            <div class="row-fluid">
-              <div class="col-md-6 col-md-offset-3">
               {% if post.published_date %}
                   <div class="date">
                     {{ post.published_date }}
@@ -33,15 +15,31 @@
               {% else %}
                   <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
               {% endif %}
-            </div>
-            </div>
-            <div class="row-fluid">
-              <div class="col-md-6 col-md-offset-3">
+
+                <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ post.category.title }}</p></a> <!-- change to hyperlink to category detal page listing all posts in category -->
                 {{ post.text|safe|linebreaksbr }}
-              {% if post.image %}
-                <img src='{{ post.image.url }}' class='img-responsive'/>
+                {% if post.image %}
+                  <img src='{{ post.image.url }}' class='img-responsive'/>
+                {% endif %}
+                {% if post.sourcecode %}
+                  {% load highlight_code %}
+                    {{ post.sourcecode|formatCode|safe }}
+                {% endif %}
+              </div>
+              </div>
+
+          <div class="col-sm-3">
+              <div class="sidebar">
+              {% if user.is_authenticated %}
+              <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+              {% else %}
+
               {% endif %}
-            </div>
+              <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
+                {% for category in categories %}
+                    <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+                {% endfor %}
             </div>
           </div>
         </div>

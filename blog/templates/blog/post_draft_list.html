@@ -2,11 +2,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-6 col-md-offset-3">
     {% for post in posts %}
         <div class="post">
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <p>{{ post.category.title }}</p>
             <p>{{ post.text|truncatechars:200 }}</p>
         </div>
     {% endfor %}
+  </div>
+</div>
+</div>
 {% endblock %}
