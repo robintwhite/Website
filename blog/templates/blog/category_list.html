@@ -3,14 +3,9 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="col-md-3">
-        <div class="text-right">
-        <!--Sidebar content-->
-        </div>
-      </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
       <div class ="post">
-        <div class="col-md-6">
           <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
           <div class="col-xs-12 line"><hr></div>
             {% for category in categories %}
@@ -19,7 +14,7 @@
             {% endfor %}
         </div>
       </div>
-      <div class="col-sm-3" style=""><div class="text-right">
+      <div class="col-sm-2" style=""><div class="text-right">
       </div>
       </div>
   </div>

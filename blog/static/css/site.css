@@ -1,9 +1,10 @@
 /* navbar */
 .navbar-inverse,
-.nav .navbar-nav .navbar-right {
+.nav .navbar-nav .navbar-right{
     background-color: #000000;
-    border-color: #E7E7E7;
+    border-color: #ffffff;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 /* title */
 .navbar-inverse {
@@ -52,6 +53,36 @@ header p {
 .tab { margin-left: 20px; }
 /*******body***********/
 
+.carousel-fade .carousel-inner .item {
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  background-position: top center;
+  background-size:cover;
+}
+.carousel-fade .carousel-inner .item,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  opacity: 0;
+
+}
+.carousel-fade .carousel-inner .active,
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+
+}
+.carousel-fade .carousel-inner .next,
+.carousel-fade .carousel-inner .prev,
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
 body,html {
   padding-top: 20px;
   font-family: 'Roboto', sans-serif;
@@ -60,6 +91,22 @@ body,html {
   height: 100%
 }
 
+/*Icons */
+.glyphicon.glyphicon-home {
+    font-size: 18px;
+}
+.glyphicon.glyphicon-briefcase {
+    font-size: 20px;
+}
+.glyphicon.glyphicon-file {
+    font-size: 18px;
+}
+.glyphicon.glyphicon-user {
+    font-size: 18px;
+}
+.glyphicon.glyphicon-lock {
+    font-size: 18px;
+}
 /* Index Page Banner*/
 .content {
     padding-left: 50px;
@@ -87,16 +134,18 @@ h1, h2, h3, h4 {
 .post {
     padding-left, padding-right: 50px;
     margin-bottom: 70px;
-    margin-top: 50px;
+    padding-top: 50px;
 }
 
-.post h1, h2, h3, h4, a,{
+.post h1, h2, h4 {
+    margin-top: 50px;
     font-family: 'Roboto', sans-serif;
     color: #000000;
 }
 
-.post h1, h2, h3, h4 a:visited {
-  color: #828282;
+.post h3, a {
+  font-family: 'Roboto', sans-serif;
+  color: #ff6600;
 }
 
 .mybloglist p {
@@ -106,13 +155,26 @@ h1, h2, h3, h4 {
   max-length: 75ch;
   max-height: 18ch;
 }
-.mybreak {
-margin-top: 10px;
 
+#mybreak p {
+  margin-top: 50px;
+  padding-left, padding-right: 50px;
+  margin-bottom: 20px;
 }
+
 .sidebar{
+  border-radius: 6px 6px 6px 6px;
+  background-color: #f2f2f2;
   text-align: right;
-  margin-top: 50px; }
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 60px; }
+
+  .icon{
+    float: left;
+  }
 
 .contact_info{
   margin-top: 50px;

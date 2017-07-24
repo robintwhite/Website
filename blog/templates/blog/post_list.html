@@ -4,9 +4,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3" style="">
-        </div>
-      <div class="col-sm-6" style="">
+      <div class="col-md-6 col-md-offset-3">
           <div class ="post">
           {% for post in posts %}
               <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
@@ -23,13 +21,27 @@
         {% endfor %}
         </div></div>
 
-      <div class="col-sm-3">
-          <div class="sidebar">
+        <!-- Side bar Column -->
+        <div class="col-sm-2 col-sm-offset-1">
+              <div class="sidebar">
+                <div class = "icon"><span class="glyphicon glyphicon-tags"></span></div>
             <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
             {% for category in categories %}
-              <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+                <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
             {% endfor %}
-      </div></div>
+
+            <div class="media">
+            <style>.icons {  display: inline-block;
+                              float: right;
+                             padding-top: 10px;
+                             padding-right: 10px; } </style>
+               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" target="_blank"><img src="/static/Images/instagram24.png" alt="Instagram"></a>
+               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" target="_blank"><img src="/static/Images/linkedin24.png" alt="LinkedIn"></a>
+               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" target="_blank"><img src = "/static/Images/researchgateblack24_24.png" alt="ResearchGate"></a>
+               <a href="https://github.com/robintwhite" class="icons" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png" alt="Github"></a>
+             </div>
+           </div>
+        </div>
   </div>
 </div>
 {% endblock %}

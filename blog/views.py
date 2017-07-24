@@ -10,7 +10,7 @@ import random
 def index(request):
     last = Post.objects.count() - 1
     ind = random.randint(0, last)
-    post = Post.objects.all()[ind]
+    post = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[0] #Post.objects.all()[ind]
     posts = Post.objects.all()
     categories = Category.objects.all()
     category = Category.objects.get(title = post.category)

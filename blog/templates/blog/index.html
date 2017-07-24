@@ -3,41 +3,48 @@
 <!-- Page Content -->
 {% block content %}
 
+<script>
+$('.carousel').carousel();
+</script>
+
     <br>
     <!-- Banner -->
     <style>
-    .banner{
-        width:100%;
-        height:50%;
-        height:calc(50% - 1px);
-        background-image:url("static/Images/banner_CCMNeedle_notext.jpeg");
-        background-position: top center;
-        background-size:cover;
+
+    .carousel,
+    .carousel-inner,
+    .carousel-inner .item {
+      height:50vh;
     }
 
-    .banner img {
-      width:100%;
+    .item:nth-child(1) {
+      background-image: url("static/Images/banner_CCMNeedle_notext.jpeg");
     }
-    .banner h1{
-      color: #ffffff;
-      margin-left: 40px;
+    .item:nth-child(2) {
+      background-image: url("static/Images/banner_nano.jpeg");
     }
-    .banner p {
-    color: #5E5E5E;
-    margin-left: 40px;
+    .item:nth-child(3) {
+      background-image: url("static/Images/banner_CCL.jpeg");
     }
-    .home_content p {
-    color: #5E5E5E;
-    padding-top: 50%;
-    margin-left: 40px;
+    .item:nth-child(4) {
+      background-image: url("static/Images/banner_headphone.jpeg");
     }
+    .item:nth-child(5) {
+      background-image: url("static/Images/banner_eyes.jpeg");
+    }
+    .item:nth-child(6) {
+      background-image: url("static/Images/banner_ballons.jpeg");
+    }
+    .item:nth-child(7) {
+      background-image: url("static/Images/banner_timer.jpeg");
+    }
+
     .logo {
       font-family: 'Oswald', sans-serif;
-      color: #ffffff;
+      color: #ff6600;
       font-weight:400;
       font-size:32pt;
-      padding-left:25px;
-      padding-top: 25px;
+      padding-top: 50px;
       text-align:left;
     }
     .line {
@@ -64,21 +71,154 @@
     }
     </style>
 
-    <div class="banner">
-        <div class="col-xs-7 logo">Robin White</div>
-        <div class="col-xs-5 line"></div>
-        <div class="col-xs-6 text2">Student. Researcher. Hobbyist.</div>
+    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="banner">
+        <div class="col-xs-7 col-xs-offset-1 logo">Robin White</div>
+        <div class="col-xs-3 col-xs-offset-1 line"></div>
+        <div class="col-xs-6 col-xs-offset-1 text2">Student. Researcher. Hobbyist.</div>
         <div class="col-xs-6 text"></div>
-        <div class="col-xs-6 text">Welcome to my corner of the internet</div>
         <div class="col-xs-6 text"></div>
+    </div>-->
+
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+            <li data-target="#carousel" data-slide-to="5"></li>
+            <li data-target="#carousel" data-slide-to="6"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item"> <!--1 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--2 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--3 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--4 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--5 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--6 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+            <div class="item"> <!--7 -->
+              <hgroup>
+                <div class="col-xs-7 col-xs-offset-1 logo">
+                  Robin White
+                </div>
+                <div class="col-xs-6 col-xs-offset-1 text2">
+                  Student. Researcher. Hobbyist.
+                </div>
+              </hgroup>
+            </div>
+        </div>
+
     </div>
 
     <div class="container-fluid">
-      <div class="mybreak">
-      <p>I am currently a PhD student at Simon Fraser University, if you wish to contact me just send me an email: <abbr title="Email"></abbr><a href="mailto:robint.white90@gmail.com"><i class="fa fa-envelope-o"></i></a></p>
-    </div>
+      <div class ="row">
+      <div class="col-md-6 col-md-offset-3" id="mybreak">
+        <p>Hi!<br /> My name is Robin and I am currently a PhD student in the <a href="fcrel.ca">Fuel Cell Research Laboratory</a> at Simon Fraser University.
+          My research focuses on using X-ray Computed Tomography to better understand Polymer Electrolyte Fuel Cells and improve their lifetime by studying degradation mechanisms.<br />
+          <br />
+          I knew since a very young age that I wanted to be a scientist, and this passion has led me to be involved with quite a number of different <a href="{% url 'projects' %}">projects</a>.
+          During my grade 11 year in highschool I had the opportunity to work at <a href="http://www.aecl.ca/en/home/default.aspxAtomic" target="_blank"> Atomic Energy Canada Limited</a>, as part of
+          a summer co-op under the supervision of Claire Simister, where I helped investigate the impact of a new
+          <a href="https://www.iaea.org/OurWork/ST/NE/NEFW/documents/TWGFPT-2011/presentations/CANDUPHWR.pdf" target="_blank">fabrication method</a>
+          for Zirconia pellets used as neutron absorbers for advanced fuel cycles.<br />
+          <br />
+          Following this, I completed my undergraduate studies at the University of Guelph in the first graduating class of their Nanoscience program. I was exposed to a wide variety of
+          analysis methods during my time there, and even spent a summer learning to code in C; developing a simulation of the motility of bacteria. The idea here was to better
+          correlate the microscopic interactions that lead to the macroscopic colony pattern formation. This then followed into my 4th year thesis project which was
+          <a href ="https://www.researchgate.net/publication/258755997_Quantifying_the_Dynamics_of_Bacterial_Crowd_Surfingexperimental" target="_blank"> experimental validation</a>.
+          I took my new found interesting in the power of coding and wrote a Matlab script that tracks the motion of bacteria from videos taken by a light microscope. The result of this work
+          I have up on my Github which you can find a link to in my projects page.<br />
+          <br />
+          Although I enjoyed this work, I knew I wanted to get into alternative energy research. I completed my masters studying OLEDs and Organic Solar Cells at the University of Toronto working with X-ray Photoelectron Spectroscopy
+          in Prof. Zheng-hong Lu's <a href = "http://www.ecf.utoronto.ca/~luzheng/" target="_blank">Optoelectronics Research Lab</a>. I was the lab manager for my time here and learned a great deal about X-ray interactions
+          with matter, as well as ultra high vacuum equipment, physical vapour deposition, and sample prep. <br />
+          <br />
+          Continuing with my experience in X-ray, image processing, and interest in clean energy technology, I found Prof. Erik Kjeang who had just been starting a project with XCT of fuel cells.
+          I can say that this has really been my favourite work so far. Currently, I am interested in the application of XCT and processing the data sets to obtain quantitative information about
+          the sample visualized. I have gained a new interest in python coding, which I also used to build this website, and the use of machine learning to process XCT images and data sets.
+          </thead>
+          </p>
+          <p>If you wish to contact me just send me an email: <abbr title="Email"></abbr><a href="mailto:robint.white90@gmail.com"><i class="fa fa-envelope-o"></i></a></p>
+        </div>
+        <!-- Side bar Column -->
+        <div class="col-sm-2 col-sm-offset-1">
+              <div class="sidebar">
+                <div class = "icon"><span class="glyphicon glyphicon-tags"></span></div>
+            <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
+            {% for category in categories %}
+                <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+            {% endfor %}
+
+            <div class="media">
+            <style>.icons {  display: inline-block;
+                              float: right;
+                             padding-top: 10px;
+                             padding-right: 10px; } </style>
+               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" target="_blank"><img src="/static/Images/instagram24.png" alt="Instagram"></a>
+               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" target="_blank"><img src="/static/Images/linkedin24.png" alt="LinkedIn"></a>
+               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" target="_blank"><img src = "/static/Images/researchgateblack24_24.png" alt="ResearchGate"></a>
+               <a href="https://github.com/robintwhite" class="icons" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png" alt="Github"></a>
+             </div>
+           </div>
+        </div>
+      </div>
       <div class="row">
-        <!-- Contact Details Column -->
+        <!-- Contact Details Column
         <div class="col-sm-3">
         <div class="contact_info">
           <p></p>
@@ -86,22 +226,13 @@
        <p>
            Current location:<br>Vancouver, British Columbia<br>Canada<br>
        </p>
-
-           <div class="media-left">
-           <style>.icons {  display: inline-block;
-                            padding-top: 10px;
-                            padding-right: 10px; } </style>
-              <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" target="_blank"><img src="/static/Images/instagram24.png" alt="Instagram"></a>
-              <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" target="_blank"><img src="/static/Images/linkedin24.png" alt="LinkedIn"></a>
-              <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" target="_blank"><img src = "/static/Images/researchgateblack24_24.png"></a>
-          </div>
         </div>
-        </div>
+        </div>-->
 
           <!-- Random post Column -->
-        <div class="col-sm-6">
+        <div class="col-md-6 col-md-offset-3">
           <div class="post">
-          <h2>Random Post</h2>
+          <h2>Latest Blog Post</h2>
                     <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
                     <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
                     <p>published: {{ post.published_date }}</p>
@@ -115,15 +246,6 @@
             </div>
           </div>
 
-            <!-- Side bar Column -->
-        <div class="col-sm-3">
-              <div class="sidebar">
-            <a href="{% url 'post_detail' pk=latest_post.pk %}"><p>latest</p></a>
-            {% for category in categories %}
-                <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
-            {% endfor %}
-            </div>
-        </div>
       </div>
     </div>
 
