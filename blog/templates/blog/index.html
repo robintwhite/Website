@@ -183,7 +183,7 @@ $('.carousel').carousel();
           correlate the microscopic interactions that lead to the macroscopic colony pattern formation. This then followed into my 4th year thesis project which was
           <a href ="https://www.researchgate.net/publication/258755997_Quantifying_the_Dynamics_of_Bacterial_Crowd_Surfingexperimental" target="_blank"> experimental validation</a>.
           I took my new found interest in the power of coding and wrote a Matlab script that tracks the motion of bacteria from videos taken by a light microscope. The result of this work
-          I have up on my Github which you can find a link to in my projects page.<br />
+          I have up on my <a href="https://github.com/robintwhite" target="_blank">Github</a> and publications page.<br />
           <br />
           Although I enjoyed this work, I had a strong yearning to get into alternative energy research. I completed my masters studying OLEDs and Organic Solar Cells at the University of Toronto working with X-ray Photoelectron Spectroscopy
           in Prof. Zheng-hong Lu's <a href = "http://www.ecf.utoronto.ca/~luzheng/" target="_blank">Optoelectronics Research Lab</a>. I was the lab manager for my time there and learned a great deal about X-ray interactions
@@ -210,10 +210,10 @@ $('.carousel').carousel();
                               float: right;
                              padding-top: 10px;
                              padding-right: 10px; } </style>
-               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" target="_blank"><img src="/static/Images/instagram24.png" alt="Instagram"></a>
-               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" target="_blank"><img src="/static/Images/linkedin24.png" alt="LinkedIn"></a>
-               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" target="_blank"><img src = "/static/Images/researchgateblack24_24.png" alt="ResearchGate"></a>
-               <a href="https://github.com/robintwhite" class="icons" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png" alt="Github"></a>
+               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" title="Instagram" target="_blank"><img src="/static/Images/instagram24.png"></a>
+               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" title="LinkedIn" target="_blank"><img src="/static/Images/linkedin24.png"></a>
+               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" title="ResearchGate" target="_blank"><img src = "/static/Images/researchgateblack24_24.png"></a>
+               <a href="https://github.com/robintwhite" class="icons" title="Github" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png"></a>
              </div>
            </div>
         </div>
@@ -238,8 +238,9 @@ $('.carousel').carousel();
                     <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
                     <p>published: {{ post.published_date }}</p>
                     <div class ="mybloglist">
-                      <p>{{ post.text|safe|linebreaksbr }}</p>
+                      <p>{{ post.text|safe|truncatechars:255 }}</p>
                     </div>
+                    <a href="#" class="btn btn-default btn-sm readmore" role="button">Read on</a>
                     <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
                   {% if post.image %}
                     <img src='{{ post.image.url }}' class='img-responsive' height="50%" width="50%"/>

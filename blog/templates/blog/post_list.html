@@ -10,8 +10,9 @@
               <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
               <p>published: {{ post.published_date }}</p>
               <div class ="mybloglist">
-                <p>{{ post.text|safe|linebreaksbr }}</p>
+                <p>{{ post.text|safe|truncatechars:255 }}</p>
               </div>
+              <a href="#" class="btn btn-default btn-sm readmore" role="button">Read on</a>
               <a href="{% url 'category_detail' pk=post.category.pk %}"><p>#{{ post.category.title }}</p></a>
               <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
             {% if post.image %}
@@ -35,10 +36,10 @@
                               float: right;
                              padding-top: 10px;
                              padding-right: 10px; } </style>
-               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" target="_blank"><img src="/static/Images/instagram24.png" alt="Instagram"></a>
-               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" target="_blank"><img src="/static/Images/linkedin24.png" alt="LinkedIn"></a>
-               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" target="_blank"><img src = "/static/Images/researchgateblack24_24.png" alt="ResearchGate"></a>
-               <a href="https://github.com/robintwhite" class="icons" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png" alt="Github"></a>
+               <a href="https://www.instagram.com/robintwhite/?ref=badge" class="icons" title="Instagram" target="_blank"><img src="/static/Images/instagram24.png"></a>
+               <a href="https://ca.linkedin.com/pub/robin-white/59/257/188" class="icons" title="LinkedIn" target="_blank"><img src="/static/Images/linkedin24.png"></a>
+               <a href="https://www.researchgate.net/profile/Robin_White10" class="icons" title="ResearchGate" target="_blank"><img src = "/static/Images/researchgateblack24_24.png"></a>
+               <a href="https://github.com/robintwhite" class="icons" title="Github" target="_blank"><img src = "/static/Images/GitHub-Mark-24px.png"></a>
              </div>
            </div>
         </div>

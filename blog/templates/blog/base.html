@@ -22,12 +22,13 @@
         <script type="text/javascript" async
           src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/vs.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/site.css' %}">
+
     </head>
 
     <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -41,9 +42,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li><a href="{% url 'projects' %}"><span class="glyphicon glyphicon-briefcase"></span></a></li>
-            <li><a href="{% url 'post_list' %}"><span class="glyphicon glyphicon-file"></span></a></li>
+            <li><a href="/" title="Home"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="{% url 'projects' %}" title="Publications" ><span class="glyphicon glyphicon-briefcase"></span></a></li>
+            <li><a href="{% url 'post_list' %}" title="Blog" ><span class="glyphicon glyphicon-file"></span></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
@@ -51,9 +52,9 @@
               <li><a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a></li>
               <li><a href="{% url 'logout' %}" class="top-menu"><small>Log out</small></a></li>
             {% else %}
-              <li><a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a></li>
+              <li><a href="{% url 'login' %}" title="Login" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a></li>
             {% endif %}
-            <li><a href="{% url 'admin:index' %}"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li><a href="{% url 'admin:index' %}" title="Admin"><span class="glyphicon glyphicon-user"></span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
