@@ -148,6 +148,15 @@ h1, h2, h3, h4 {
   color: #ff6600;
 }
 
+.post h3:hover{
+  color: #333333;
+}
+
+/* mouse over link */
+a:hover {
+    color: #333333;
+}
+
 .mybloglist p {
   white-space: nowrap;
   overflow: hidden;
