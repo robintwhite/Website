@@ -12,7 +12,7 @@
               <div class ="mybloglist">
                 <p>{{ post.text|safe|truncatechars:255 }}</p>
               </div>
-              <a href="#" class="btn btn-default btn-sm readmore" role="button">Read on</a>
+              <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-default btn-sm readmore" role="button">Read on</a>
               <a href="{% url 'category_detail' pk=post.category.pk %}"><p>#{{ post.category.title }}</p></a>
               <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
             {% if post.image %}
