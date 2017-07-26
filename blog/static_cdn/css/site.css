@@ -15,8 +15,8 @@
     color: #ffffff;
     height:auto;
     width:auto;
-
 }
+
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
     color: #5E5E5E;
@@ -83,12 +83,20 @@ header p {
   z-index: 2;
 }
 
-body,html {
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
   padding-top: 20px;
+  padding-bottom: 6rem;
+  min-height: 100%;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #000000;
-  height: 100%
 }
 
 /*Icons */
@@ -189,12 +197,6 @@ a:hover {
     float: left;
   }
 
-.contact_info{
-  margin-top: 50px;
-  font-family: 'Roboto', sans-serif;
-  color: #000000;
-}
-
 .comment{
   margin: 20px 0 20px 20px;
 }
@@ -205,5 +207,18 @@ ul {
 /* Footer Styles */
 
 footer {
-    margin: 20px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-width:100%;
+    max-width:100%;
 }
