@@ -182,9 +182,27 @@ $('.carousel').carousel();
 
     <div class="container-fluid">
       <div class ="row">
-      <div class="col-md-6 col-md-offset-3" id="mybreak">
+        <div class="col-md-3">
+          <div class="post">
+          <h2>Latest Blog Post</h2>
+                    <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+                    <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
+                    <p>published: {{ post.published_date }}</p>
+                    <div class ="mybloglist">
+                      <p>{{ post.text|safe|truncatechars:255 }}</p>
+                    </div>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-default btn-sm readmore" role="button">Read on</a>
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+                  {% if post.image %}
+                    <img src='{{ post.image.url }}' class='img-responsive' height="50%" width="50%"/>
+                  {% endif %}
+            </div>
+        </div>
+      <div class="col-md-6" id="mybreak">
         <p>Hi!<br /> My name is Robin and I am currently in my final year as a PhD student in the <a href="fcrel.ca" target = "_blank">Fuel Cell Research Laboratory</a> at Simon Fraser University.
-          My research focuses on using X-ray Computed Tomography to better understand Polymer Electrolyte Fuel Cells and improve their lifetime by studying degradation mechanisms.<br />
+          My research focuses on using X-ray Computed Tomography to better understand Polymer Electrolyte Fuel Cells and improve their lifetime by studying degradation mechanisms. I am actively involved with exploring image processing methods and quantitative analysis techniques to elicit new findings.<br />
+          <br />
+          Here you will find links to my current research, past projects, and a blog where I post snippets of information and code to aid my colleagues, students or anyone interested. If you're curious, here is a overview about me. <br />
           <br />
           I knew since a very young age that I wanted to be a scientist, and this passion has led me to be involved with quite a number of different <a href="{% url 'projects' %}" target = "_blank">projects</a>.
           During my grade 11 year in highschool I had the opportunity to work at <a href="http://www.aecl.ca/en/home/default.aspx" target="_blank"> Atomic Energy Canada Limited</a>, as part of
@@ -211,10 +229,10 @@ $('.carousel').carousel();
            aquired and I am exploring the use of machine learning to process XCT images and data sets to improve scientific analysis. I am very interested in the application of Artificial intelligence and
            have taken a number of courses on this topic during my PhD studies.<br />
            <br />
-           Thanks for stopping by.
+           Thanks for stopping by!
           </thead>
           </p>
-          <p>If you wish to contact me just send me an email: <abbr title="Email"></abbr><a href="mailto:robint.white90@gmail.com"><i class="fa fa-envelope-o"></i></a></p>
+          <!--<p>If you wish to contact me just send me an email: <abbr title="Email"></abbr><a href="mailto:robint.white90@gmail.com"><i class="fa fa-envelope-o"></i></a></p> -->
         </div>
         <!-- Side bar Column -->
         <div class="col-sm-2 col-sm-offset-1">
@@ -252,21 +270,8 @@ $('.carousel').carousel();
 
           <!-- Random post Column -->
         <div class="col-md-6 col-md-offset-3">
-          <div class="post">
-          <h2>Latest Blog Post</h2>
-                    <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
-                    <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
-                    <p>published: {{ post.published_date }}</p>
-                    <div class ="mybloglist">
-                      <p>{{ post.text|safe|truncatechars:255 }}</p>
-                    </div>
-                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-default btn-sm readmore" role="button">Read on</a>
-                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-                  {% if post.image %}
-                    <img src='{{ post.image.url }}' class='img-responsive' height="50%" width="50%"/>
-                  {% endif %}
-            </div>
-          </div>
+
+        </div>
 
       </div>
     </div>
