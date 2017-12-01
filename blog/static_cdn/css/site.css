@@ -193,6 +193,26 @@ a:hover {
   padding-bottom: 10px;
   margin-top: 60px; }
 
+.post-sidebar{padding-right: 10px;
+padding-left: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+margin-top: 60px; }
+
+.post-sidebar h1, h2, h4 {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+
+.post-sidebar h3, a {
+  font-family: 'Roboto', sans-serif;
+  color: #ff6600;
+}
+
+.post-sidebar h3:hover{
+  color: #333333;
+}
+
   .icon{
     float: left;
   }

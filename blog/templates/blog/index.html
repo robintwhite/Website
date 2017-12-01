@@ -183,13 +183,13 @@ $('.carousel').carousel();
     <div class="container-fluid">
       <div class ="row">
         <div class="col-md-3">
-          <div class="post">
-          <h2>Latest Blog Post</h2>
-                    <a href="{% url 'post_detail' pk=post.pk %}"><h3>{{ post.title }}</h3></a>
+          <div class="post-sidebar">
+          <h4>Latest Blog Post</h4>
+                    <a href="{% url 'post_detail' pk=post.pk %}"><h5>{{ post.title }}</h5></a>
                     <a href="{% url 'category_detail' pk=category.pk %}"><p>#{{ category.title }}</p></a>
                     <p>published: {{ post.published_date }}</p>
                     <div class ="mybloglist">
-                      <p>{{ post.text|safe|truncatechars:255 }}</p>
+                      <p>{{ post.text|safe|truncatechars:500 }}</p>
                     </div>
                     <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-default btn-sm readmore" role="button">Read on</a>
                     <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
